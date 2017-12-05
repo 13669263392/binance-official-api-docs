@@ -1,6 +1,6 @@
 # User Data Streams for Binance (2017-12-01)
 # General WSS information
-* The base API endpoint is: **http://api.binance.com**
+* The base API endpoint is: **https://api.binance.com**
 * A User Data Stream `listenKey` is valid for 60 minutes after creation.
 * Doing a `PUT` on a `listenKey` will extend its validity for 60 minutes.
 * Doing a `DELETE` on a `listenKey` will close the stream.
