@@ -1,5 +1,7 @@
-# binance-official-api-docs
-Official Documentation for the Binance APIs and Streams
+# Official Documentation for the Binance APIs and Streams.
+* Streams, endpoints, parameters, payloads, etc. decscribed in the documents in this repository are considered **official** and **supported**.
+* The use of any other streams, endpoints, parameters, or payloads, etc. is **not supported**; **use them at your own risk and with no guarantees.**
+
 
 Name | Description
 ------------ | ------------ 
