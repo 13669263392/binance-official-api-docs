@@ -1,4 +1,4 @@
-# Public Rest API for Binance (2017-12-01)
+# Public WAPI for Binance (2017-12-01)
 # General API Information
 * The base endpoint is: **https://api.binance.com**
 * All endpoints return either a JSON object or array.
@@ -17,7 +17,7 @@ It is important to **NOT** treat this as a failure; the execution status is
 * Any endpoint can retun an ERROR; the error payload is as follows:
 ```javascript
 {
-  "code": -1121,
+  "success": false,
   "msg": "Invalid symbol."
 }
 ```
@@ -180,7 +180,7 @@ POST /wapi/v3/withdraw.html (HMAC SHA256)
 Submit a withdraw request.
 
 **Weight:**
-100
+1
 
 **Parameters:**
 
@@ -251,33 +251,6 @@ timestamp | LONG | YES
     "success": true
 }
 ```
-OR
-```javascript
-[
-{
-    "depositList": [
-        {
-            "insertTime": 1508198532000,
-            "amount": 0.04670582,
-            "asset": "ETH",
-            "address": "0x6915f16f8791d0a1cc2bf47c13a6b2a92000504b",
-            "txId": "0xdf33b22bdb2b28b1f75ccd201a4a4m6e7g83jy5fc5d5a9d1340961598cfcb0a1",
-            "status": 1
-        },
-        {
-            "insertTime": 1508298532000,
-            "amount": 1000,
-            "asset": "XMR",
-            "address": "463tWEBn5XZJSxLU34r6g7h8jtxuNcDbjLSjkn3XAXHCbLrTTErJrBWYgHJQyrCwkNgYvyV3z8zctJLPCZy24jvb3NiTcTJ",
-            "addressTag": "342341222",
-            "txId": "b3c6219639c8ae3f9cf010cdc24fw7f7yt8j1e063f9b4bd1a05cb44c4b6e2509",
-            "status": 1
-        }
-    ],
-    "success": true
-}
-]
-```
 
 ### Withdraw History (USER_DATA)
 ```
@@ -327,35 +300,7 @@ timestamp | LONG | YES
     "success": true
 }
 ```
-OR
-```javascript
-[
-{
-    "withdrawList": [
-        {
-            "id":"7213fea8e94b4a5593d507237e5a555b"
-            "amount": 1,
-            "address": "0x6915f16f8791d0a1cc2bf47c13a6b2a92000504b",
-            "asset": "ETH",
-            "txId": "0xdf33b22bdb2b28b1f75ccd201a4a4m6e7g83jy5fc5d5a9d1340961598cfcb0a1",
-            "applyTime": 1508198532000 
-            "status": 4
-        },
-        {
-            "id":"7213fea8e94b4a5534ggsd237e5a555b"
-            "amount": 1000,
-            "address": "463tWEBn5XZJSxLU34r6g7h8jtxuNcDbjLSjkn3XAXHCbLrTTErJrBWYgHJQyrCwkNgYvyV3z8zctJLPCZy24jvb3NiTcTJ",
-            "addressTag": "342341222",
-            "txId": "b3c6219639c8ae3f9cf010cdc24fw7f7yt8j1e063f9b4bd1a05cb44c4b6e2509",
-            "asset": "XMR",
-            "applyTime": 1508198532000,
-            "status": 4
-        }
-    ],
-    "success": true
-}
-]
-```
+
 
 
 
@@ -407,7 +352,10 @@ timestamp | LONG | YES
 **Response:**
 ```javascript
 {
-    "msg": "Normal",
-    "success": true
+    "msg": "Order failed:Low Order fill rate! Will be reactivated after 5 minutes.",
+    "success": true,
+    "objs": [
+        "5"
+    ]
 }
 ```
